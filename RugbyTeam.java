@@ -39,6 +39,14 @@ public class RugbyTeam {
         return scoreOverall;
     }
 
+    public int getScoreFor(){
+        return scoreFor;
+    }
+
+    public int getScoreAgainst(){
+        return scoreAgainst;
+    }
+
     public void setOverallPoints (int scoreOverall){
         if (scoreOverall > 0){
             pointsOverall += 2;
@@ -51,31 +59,23 @@ public class RugbyTeam {
         }
     }
 
-    @Override
-    public String toString() {
-        return "RugbyTeam{" +
-                "teamName='" + teamName + '\'' +
-                ", matchesPlayed=" + matchesPlayed +
-                ", matchesWon=" + matchesWon +
-                ", matchesLost=" + matchesLost +
-                ", matchesDrawn=" + matchesDrawn +
-                ", scoreFor=" + scoreFor +
-                ", scoreAgainst=" + scoreAgainst +
-                ", pointsDifference=" + pointsDifference +
-                ", pointsOverall=" + pointsOverall +
-                ", scoreOverall=" + scoreOverall +
-                '}';
+    public int getOverallPoints(){
+        return pointsOverall;
     }
 
     public static void main(String[] args){
 
+        System.out.println(String.format("%-25s %-15s %15s %20s %20s", "Team", "Overall Score", "Points", "Score For", "Score Against"));
+
         RugbyTeam leeds = new RugbyTeam("Leeds Rhinos");
-        leeds.setScore(35,10);
-        System.out.println(String.format("%-25s %4s", leeds.getTeamName(), leeds.getScore()));
+        leeds.setScore(5,5);
+        leeds.setOverallPoints(leeds.scoreOverall);
+        System.out.println(String.format("%-25s %8s %19s %19s %19s", leeds.getTeamName(), leeds.getScore(), leeds.getOverallPoints(), leeds.getScoreFor(), leeds.getScoreAgainst()));
 
 
         RugbyTeam hudds = new RugbyTeam("Huddersfield Giants");
-        hudds.setScore(10,35);
-        System.out.println(String.format("%-25s %4s", hudds.getTeamName(), hudds.getScore()));
+        hudds.setScore(5,5);
+        hudds.setOverallPoints(hudds.scoreOverall);
+        System.out.println(String.format("%-25s %8s %19s %19s %19s", hudds.getTeamName(), hudds.getScore(), hudds.getOverallPoints(), hudds.getScoreFor(), hudds.getScoreAgainst()));
     }
 }
