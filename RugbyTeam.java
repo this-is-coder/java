@@ -15,6 +15,7 @@ public class RugbyTeam {
     private ArrayList<Integer> gamesWon;
     private ArrayList<Integer> gamesLost;
     private ArrayList<Integer> gamesDrawn;
+    private ArrayList<Integer> overallPoints;
 
     public RugbyTeam(String teamName){
         this.teamName = teamName;
@@ -38,20 +39,17 @@ public class RugbyTeam {
         return scoreOverall;
     }
 
-    public void setOverallGamesWon(int scoreOverall) {
-        if (scoreOverall > 0) {
-            gamesWon.add(1);
-            }
-        else if (scoreOverall == 0){
-            gamesDrawn.add(1);
-            }
-        else if (scoreOverall < 0) {
-            gamesLost.add(1);
-            }
-        else{
-            System.out.println("Invalid Response");
-            }
+    public void setOverallPoints (int scoreOverall){
+        if (scoreOverall > 0){
+            pointsOverall += 2;
+        }else if (scoreOverall == 0){
+            pointsOverall += 1;
+        }else if (scoreOverall < 0){
+            pointsOverall += 0;
+        }else{
+            System.out.println("Invalid!");
         }
+    }
 
     @Override
     public String toString() {
