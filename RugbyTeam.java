@@ -65,17 +65,22 @@ public class RugbyTeam {
 
     public static void main(String[] args){
 
-        System.out.println(String.format("%-25s %-15s %15s %20s %20s", "Team", "Overall Score", "Points", "Score For", "Score Against"));
-
+        System.out.println(String.format("%-27s %-15s %13s %18s %22s", "Team", "Points", "Overall Score", "Score For", "Score Against\n"));
+        
         RugbyTeam leeds = new RugbyTeam("Leeds Rhinos");
-        leeds.setScore(5,5);
+        leeds.setScore(25,15);
         leeds.setOverallPoints(leeds.scoreOverall);
-        System.out.println(String.format("%-25s %8s %19s %19s %19s", leeds.getTeamName(), leeds.getScore(), leeds.getOverallPoints(), leeds.getScoreFor(), leeds.getScoreAgainst()));
-
+        System.out.println(String.format("%-25s %5s %19s %21s %20s", leeds.getTeamName(), leeds.getOverallPoints(), leeds.getScore(), leeds.getScoreFor(), leeds.getScoreAgainst()));
 
         RugbyTeam hudds = new RugbyTeam("Huddersfield Giants");
-        hudds.setScore(5,5);
+        hudds.setScore(15,25);
         hudds.setOverallPoints(hudds.scoreOverall);
-        System.out.println(String.format("%-25s %8s %19s %19s %19s", hudds.getTeamName(), hudds.getScore(), hudds.getOverallPoints(), hudds.getScoreFor(), hudds.getScoreAgainst()));
+        System.out.println(String.format("%-25s %5s %19s %21s %20s", hudds.getTeamName(), hudds.getOverallPoints(), hudds.getScore(), hudds.getScoreFor(), hudds.getScoreAgainst()));
+
+        RugbyTeam hull = new RugbyTeam("Hull FC");
+        System.out.println(String.format("%-25s %5s %19s %21s %20s", hull.getTeamName(), hull.getOverallPoints(), hull.getScore(), hull.getScoreFor(), hull.getScoreAgainst()));
+
+        RugbyTeam wigan = new RugbyTeam("Wigan Warriors");
+        System.out.println(String.format("%-25s %5s %19s %21s %20s", wigan.getTeamName(), wigan.getOverallPoints(), wigan.getScore(), wigan.getScoreFor(), wigan.getScoreAgainst()));
     }
 }
