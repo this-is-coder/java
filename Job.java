@@ -1,4 +1,5 @@
-public class Job {
+public class Job implements Comparable <Job> {
+
     private String jobName;
     private int jobPriority;
     private boolean isFinished;
@@ -32,4 +33,11 @@ public class Job {
         return jobName + " " + jobPriority + " " + isFinished;
     }
 
+    @Override
+    public int compareTo(Job job) {
+        if (job.getJobPriority() > this.getJobPriority()){
+            return this.jobPriority;
+        }
+        return job.jobPriority;
+    }
 }
